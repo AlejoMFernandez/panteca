@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panteca · Postres, pastas y café en Villa del Parque</title>
+<meta name="description" content="Panteca, casona de esquina en Argerich 2705, Villa del Parque. Tortas gigantes, tostones y pastas artesanales. Encargá tu torta entera con seña y reservá tu mesa online.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Panteca">
+<meta property="og:title" content="Panteca · Postres, pastas y café en Villa del Parque">
+<meta property="og:description" content="Mirá la vitrina de hoy, encargá tu torta entera y reservá tu mesa en la casona.">
+<meta property="og:url" content="https://panteca.vercel.app/">
+<meta property="og:image" content="https://panteca.vercel.app/img/og.jpg?v=1">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Panteca: tu carta, tus encargos y tus reservas">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://panteca.vercel.app/img/og.jpg?v=1">
+<meta name="theme-color" content="#42210E">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<script>
+  (function () { var d = document.documentElement; d.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !/[?&]sinintro/.test(location.search)) d.classList.add('con-intro');
+    setTimeout(function () { if (!window.__panteca) { d.classList.remove('con-intro'); d.classList.add('listo'); } }, 4500); })();
+</script>
+<link rel="preload" href="fonts/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/f/hero-720.webp" as="image" type="image/webp" media="(max-width: 767px)">
+<link rel="preload" href="img/f/hero-1080.webp" as="image" type="image/webp" media="(min-width: 768px)">
+<link rel="stylesheet" href="kit/kit.css?v=2">
+<link rel="stylesheet" href="css/panteca.css?v=2">
+</head>
+<body>
+
+<!-- ===== INTRO: se prende el cartel y sube el vidrio de la vitrina ===== -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__listones"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="intro__cartel">
+    <span class="intro__halo"></span>
+    <img class="intro__logo" src="img/logo-crema.svg" alt="" width="298" height="117">
+  </div>
+  <span class="intro__led"></span>
+</div>
+
+<a class="saltar" href="#encargos">Ir a encargar una torta</a>
+
+<!-- ===== BARRA ===== -->
+<header class="barra" id="barra">
+  <a class="barra__logo" href="#inicio" aria-label="Panteca, inicio"><img src="img/logo.svg" alt="Panteca postres y café" width="298" height="117"></a>
+  <nav class="barra__nav" aria-label="Secciones">
+    <a href="#vitrina">Vitrina</a>
+    <a href="#carta">Carta</a>
+    <a href="#encargos">Encargos</a>
+    <a href="#reservas">Reservas</a>
+    <a href="#visitanos">Visitanos</a>
+  </nav>
+  <div class="barra__acc">
+    <button type="button" class="barra__caja" data-kit-open="carrito" data-kit-target aria-label="Tu caja de encargos">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1.5 11h-13z"/><path d="M8 9V7a4 4 0 0 1 8 0v2"/></svg>
+      <span class="barra__n" data-caja-n hidden>0</span>
+    </button>
+    <button type="button" class="barra__reservar" data-kit-open="reservas">Reservar mesa</button>
+    <button type="button" class="barra__menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" data-menu>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav class="menu__nav" aria-label="Menú">
+    <a href="#vitrina" data-menu-link>Hoy en la vitrina</a>
+    <a href="#reloj" data-menu-link>El reloj de la casona</a>
+    <a href="#carta" data-menu-link>La carta</a>
+    <a href="#encargos" data-menu-link>Encargá tu torta</a>
+    <a href="#reservas" data-menu-link>Reservá tu mesa</a>
+    <a href="#visitanos" data-menu-link>Visitanos</a>
+  </nav>
+  <div class="menu__pie">
+    <span>Argerich 2705 · Villa del Parque</span>
+    <span data-estado-txt>Martes a domingo desde las 8:30</span>
+  </div>
+</div>
+
+<main id="inicio">
+
+<!-- ===== 1 · HERO: ¿Es una torta o un edificio? ===== -->
+<section class="hero" aria-labelledby="hero-t">
+  <div class="hero__in">
+    <div class="hero__texto">
+      <p class="eyebrow hero__eyebrow anim" style="--d:1">Postres, pastas y café<span class="lejos"> · Villa del Parque</span></p>
+      <h1 class="hero__t" id="hero-t"><span class="ren"><span style="--d:2">¿Es una torta</span></span> <span class="ren"><span style="--d:3">o un edificio?</span></span></h1>
+      <p class="hero__bajada anim" style="--d:4">Porciones gigantes todos los días, tostones para compartir y pastas artesanales en una casona de esquina. Ahora también encargás tu torta entera desde acá.</p>
+      <div class="hero__ctas anim" style="--d:5">
+        <a class="btn btn--pri" href="#vitrina">Ver las tortas de hoy</a>
+        <a class="btn btn--sec" href="#encargos">Encargar una torta entera</a>
+      </div>
+      <ul class="hero__datos anim" style="--d:6">
+        <li><a href="https://www.google.com/maps/place/?q=place_id:ChIJvSrwyLa3vJUR4zRaEKuE-iw" target="_blank" rel="noopener"><strong>4,3</strong> · 1.712 reseñas en Google</a></li>
+        <li>Argerich 2705</li>
+        <li data-estado-txt>Martes a domingo desde las 8:30</li>
+      </ul>
+    </div>
+    <div class="hero__foto">
+      <div class="regla" aria-hidden="true"><span style="--i:4">4°</span><span style="--i:3">3°</span><span style="--i:2">2°</span><span style="--i:1">1°</span><span style="--i:0">PB</span></div>
+      <figure class="hero__arco">
+        <picture>
+          <source media="(min-width: 768px)" srcset="img/f/hero-1080.webp" width="1080" height="1350">
+          <img src="img/f/hero-720.webp" alt="Torta Chocolate Dubái cortada: chocolate y pistacho en capas altísimas" width="720" height="900" fetchpriority="high" decoding="async">
+        </picture>
+      </figure>
+      <figure class="hero__polaroid" aria-hidden="true">
+        <img src="img/f/polaroid-074.webp" alt="" width="440" height="550" loading="lazy" decoding="async">
+        <figcaption>Red pie, recién cortada</figcaption>
+      </figure>
+      <div class="hero__sello">
+        <span>Porción del día</span>
+        <strong data-precio-porcion>$8.000</strong>
+        <small>en el salón</small>
+      </div>
+      <span class="hero__chip">Hoy en la vitrina</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2 · HOY EN LA VITRINA ===== -->
+<section class="vitrina" id="vitrina" aria-labelledby="vitrina-t">
+  <div class="wrap">
+    <div class="cabeza cabeza--claro">
+      <div>
+        <p class="eyebrow">Hoy en la vitrina</p>
+        <h2 class="titulo" id="vitrina-t"><span class="ren"><span>Tocá una torta y se prende la luz</span></span></h2>
+      </div>
+      <p class="cabeza__txt">La porción va en el salón. Si la querés entera, la encargás para retirar.</p>
+    </div>
+  </div>
+  <div class="estante" data-estante>
+    <div class="estante__pista" data-pista tabindex="0" aria-label="Tortas de hoy, deslizá para ver más"></div>
+  </div>
+  <div class="wrap estante__pie">
+    <span class="estante__hint" aria-hidden="true">Deslizá para ver todas</span>
+    <div class="flechas">
+      <button type="button" class="flecha" data-mover="-1" aria-label="Tortas anteriores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="flecha" data-mover="1" aria-label="Más tortas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 · EL RELOJ DE LA CASONA ===== -->
+<section class="reloj" id="reloj" aria-labelledby="reloj-t" data-momento="merienda">
+  <div class="wrap">
+    <div class="cabeza">
+      <div>
+        <p class="eyebrow">El reloj de la casona</p>
+        <h2 class="titulo" id="reloj-t"><span class="ren"><span>De 8:30 a la noche, siempre hay algo</span></span></h2>
+      </div>
+      <p class="cabeza__txt" data-reloj-ahora>Movés la perilla y la casona cambia con la hora.</p>
+    </div>
+    <div class="reloj__chips" role="tablist" aria-label="Momentos del día">
+      <button type="button" role="tab" class="chip" data-mom="manana" aria-selected="false">Mañana</button>
+      <button type="button" role="tab" class="chip" data-mom="mediodia" aria-selected="false">Mediodía</button>
+      <button type="button" role="tab" class="chip" data-mom="merienda" aria-selected="true">Merienda</button>
+      <button type="button" role="tab" class="chip" data-mom="noche" aria-selected="false">Noche</button>
+    </div>
+    <div class="dia" data-dia>
+      <div class="dia__riel"><span class="dia__lleno" data-dia-lleno></span></div>
+      <button type="button" class="dia__perilla" data-perilla role="slider" aria-label="Hora del día" aria-valuemin="510" aria-valuemax="1410" aria-valuenow="1020" aria-valuetext="17:00"><span data-perilla-h>17:00</span></button>
+      <div class="dia__marcas" aria-hidden="true"><span>8:30</span><span>12:00</span><span>16:00</span><span>20:00</span><span>23:30</span></div>
+    </div>
+    <div class="momento" data-panel>
+      <figure class="momento__foto">
+        <img data-mom-img src="img/f/brownies-merengue.webp" alt="" width="640" height="800" loading="lazy" decoding="async">
+      </figure>
+      <div class="momento__txt">
+        <p class="momento__hora" data-mom-hora>16 a 20 h</p>
+        <h3 class="momento__t" data-mom-t>Merienda de tortas y tostones</h3>
+        <p class="momento__p" data-mom-p>La hora pico de la casona.</p>
+        <div class="momento__ctas"><a class="btn btn--pri" data-mom-cta href="#carta">Ver la carta</a></div>
+        <figure class="momento__casona">
+          <img data-casona-img src="img/f/casona-dia-720.webp" alt="La casona de Panteca" width="720" height="594" loading="lazy" decoding="async">
+          <figcaption data-casona-cap>La casona, de día</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 · CARTA (kit, editable desde /admin) ===== -->
+<section class="carta" id="carta" aria-labelledby="carta-t">
+  <div class="wrap">
+    <div class="cabeza">
+      <div>
+        <p class="eyebrow">La carta</p>
+        <h2 class="titulo" id="carta-t"><span class="ren"><span>¿Qué se te antoja?</span></span></h2>
+      </div>
+      <p class="cabeza__txt">La editan desde su panel: precios y platos siempre al día. Lo del salón se pide en la mesa; lo de «Para encargar», desde acá.</p>
+    </div>
+    <div class="carta__grid">
+      <div class="carta__lista" data-kit="carta" id="carta-principal"></div>
+      <aside class="carta__aside" aria-hidden="true">
+        <figure class="carta__foto" data-carta-foto>
+          <img src="img/f/porcion-chocolate.webp" alt="" width="640" height="800" loading="lazy" decoding="async">
+          <figcaption data-carta-foto-cap>Pasá el mouse por un plato con punto</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 · EL TORTA-METRO ===== -->
+<section class="encargos" id="encargos" aria-labelledby="enc-t">
+  <div class="wrap">
+    <div class="cabeza">
+      <div>
+        <p class="eyebrow">Encargá tu torta entera</p>
+        <h2 class="titulo" id="enc-t"><span class="ren"><span>¿De cuántos pisos la querés?</span></span></h2>
+      </div>
+      <p class="cabeza__txt">Elegís el sabor, la torta crece según las porciones y la retirás por Argerich 2705. Con <strong>48 h</strong> de anticipación.</p>
+    </div>
+    <div class="metro">
+      <div class="metro__torta" data-metro-torta>
+        <div class="metro__regla" aria-hidden="true"><span>20 p.</span><span>16 p.</span><span>12 p.</span><span>8 p.</span></div>
+        <div class="metro__escena">
+          <div class="pisos" data-pisos data-n="3" aria-hidden="true">
+            <span class="pisos__tope" data-arrastre title="Arrastrá para sumar pisos"></span>
+            <i class="piso"></i><i class="piso"></i><i class="piso"></i><i class="piso"></i>
+            <span class="pisos__base"></span>
+          </div>
+          <figure class="metro__mini"><img data-metro-foto src="img/f/dubai-t.webp" alt="" width="240" height="300"></figure>
+        </div>
+        <p class="metro__ayuda">Arrastrá la torta para arriba o tocá un tamaño</p>
+      </div>
+      <div class="metro__form">
+        <div class="campo">
+          <span class="campo__l" id="l-sabor">Sabor</span>
+          <div class="sabores" data-sabores role="radiogroup" aria-labelledby="l-sabor"></div>
+          <div class="sabores__nav">
+            <button type="button" class="flecha flecha--chica" data-sab-mover="-1" aria-label="Sabores anteriores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button type="button" class="flecha flecha--chica" data-sab-mover="1" aria-label="Más sabores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+        <div class="campo">
+          <span class="campo__l" id="l-tam">¿Para cuántos?</span>
+          <div class="tamanos" data-tamanos role="radiogroup" aria-labelledby="l-tam">
+            <button type="button" role="radio" data-tam="8" aria-checked="false">8<small>porciones</small></button>
+            <button type="button" role="radio" data-tam="12" aria-checked="false">12<small>porciones</small></button>
+            <button type="button" role="radio" data-tam="16" aria-checked="true">16<small>porciones</small></button>
+            <button type="button" role="radio" data-tam="20" aria-checked="false">20<small>porciones</small></button>
+          </div>
+        </div>
+        <div class="campo">
+          <span class="campo__l" id="l-dia">Día de retiro</span>
+          <div class="dias" data-dias role="radiogroup" aria-labelledby="l-dia"></div>
+        </div>
+        <div class="campo">
+          <span class="campo__l" id="l-franja">Horario</span>
+          <div class="franjas" data-franjas role="radiogroup" aria-labelledby="l-franja"></div>
+        </div>
+        <div class="metro__total">
+          <div><span class="metro__sel" data-metro-sel>Chocolate Dubái · 16 porciones</span><span class="metro__precio" data-metro-precio>Precio a confirmar · seña 50%</span></div>
+          <button type="button" class="btn btn--pri btn--grande" data-metro-sumar>Sumar a mi caja</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6 · FECHAS ESPECIALES: rotisería de fin de año ===== -->
+<section class="fiestas" id="fiestas" aria-labelledby="fiestas-t" hidden>
+  <div class="wrap fiestas__in">
+    <div class="fiestas__txt">
+      <p class="eyebrow eyebrow--claro">Fecha especial</p>
+      <h2 class="titulo titulo--claro" id="fiestas-t"><span class="ren"><span>Hacé tu pedido para estas fiestas</span></span></h2>
+      <p class="fiestas__bajada" data-fiestas-bajada>Para tu mesa navideña: se encarga con seña y se retira entre el 22 y el 31 de diciembre.</p>
+      <div class="cuenta" data-cuenta aria-live="polite">
+        <div><b data-c="d">00</b><span>días</span></div><div><b data-c="h">00</b><span>horas</span></div><div><b data-c="m">00</b><span>min</span></div>
+      </div>
+      <p class="fiestas__nota">Faltan para el primer día de retiro. Precios de la temporada pasada: el local los actualiza desde su panel.</p>
+    </div>
+    <div class="fiestas__lista" data-kit="carta" data-kit-categorias="rotiseria" id="carta-fiestas"></div>
+  </div>
+</section>
+
+<!-- ===== 7 · RESERVAS ===== -->
+<section class="reservas" id="reservas" aria-labelledby="res-t">
+  <div class="reservas__in">
+    <figure class="reservas__foto">
+      <picture>
+        <source media="(min-width: 1100px)" srcset="img/f/casona-noche-1100.webp" width="1100" height="1375">
+        <img src="img/f/casona-noche-720.webp" alt="La casona de Panteca iluminada de noche" width="720" height="900" loading="lazy" decoding="async">
+      </picture>
+    </figure>
+    <div class="reservas__txt">
+      <p class="eyebrow eyebrow--claro">Reservas</p>
+      <h2 class="titulo titulo--claro" id="res-t"><span class="ren"><span>Reservá tu mesa en la casona</span></span></h2>
+      <p class="reservas__p">Para almuerzo y cena. Desayunos y meriendas, por orden de llegada: venís y te hacemos lugar.</p>
+      <div class="reservas__form" data-kit="reservas"></div>
+      <button type="button" class="btn btn--crema btn--grande reservas__btn" data-kit-open="reservas">Reservar mesa</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8 · USTEDES: galería ===== -->
+<section class="ustedes" id="ustedes" aria-labelledby="ust-t">
+  <div class="wrap">
+    <div class="cabeza">
+      <div>
+        <p class="eyebrow">Así se ve una merienda acá</p>
+        <h2 class="titulo" id="ust-t"><span class="ren"><span>1.712 reseñas no se equivocan</span></span></h2>
+      </div>
+      <a class="resena" href="https://www.google.com/maps/place/?q=place_id:ChIJvSrwyLa3vJUR4zRaEKuE-iw" target="_blank" rel="noopener">
+        <strong>4,3</strong>
+        <span class="resena__est" aria-hidden="true">★★★★<i>★</i></span>
+        <span>1.712 reseñas en Google</span>
+      </a>
+    </div>
+  </div>
+  <div class="mesa" data-mesa>
+    <figure class="pol" style="--r:-6deg; --x:4%; --y:6%"><img src="img/f/cookies-cream.webp" alt="Torta cookies and cream" width="640" height="800" loading="lazy" decoding="async"><figcaption>Cookies &amp; cream</figcaption></figure>
+    <figure class="pol" style="--r:4deg; --x:22%; --y:0%"><img src="img/f/casona-dia-720.webp" alt="La casona de Panteca en la esquina, de día" width="720" height="594" loading="lazy" decoding="async"><figcaption>La esquina de Argerich</figcaption></figure>
+    <figure class="pol" style="--r:-3deg; --x:44%; --y:8%"><img src="img/f/toston-bosque.webp" alt="Tostón del bosque con hongos y rúcula" width="720" height="900" loading="lazy" decoding="async"><figcaption>Tostón del bosque</figcaption></figure>
+    <figure class="pol" style="--r:7deg; --x:64%; --y:2%"><img src="img/f/rogel.webp" alt="Rogel con merengue" width="640" height="800" loading="lazy" decoding="async"><figcaption>Rogel</figcaption></figure>
+    <figure class="pol" style="--r:-5deg; --x:82%; --y:10%"><img src="img/f/mac-cheese.webp" alt="Mac and cheese con copa de vino" width="720" height="960" loading="lazy" decoding="async"><figcaption>Mac &amp; cheese</figcaption></figure>
+    <figure class="pol" style="--r:5deg; --x:12%; --y:52%"><img src="img/f/frutos-rojos.webp" alt="Torta de frutos rojos en la vitrina" width="640" height="800" loading="lazy" decoding="async"><figcaption>Frutos rojos</figcaption></figure>
+    <figure class="pol" style="--r:-4deg; --x:33%; --y:56%"><img src="img/f/pizza.webp" alt="Pizza estilo napolitano" width="720" height="959" loading="lazy" decoding="async"><figcaption>Pizza napolitana</figcaption></figure>
+    <figure class="pol" style="--r:3deg; --x:54%; --y:50%"><img src="img/f/carrot.webp" alt="Carrot cake de tres pisos" width="640" height="800" loading="lazy" decoding="async"><figcaption>Carrot cake</figcaption></figure>
+    <figure class="pol" style="--r:-7deg; --x:74%; --y:56%"><img src="img/f/pistacho-capas.webp" alt="Porción de pistacho y chocolate" width="640" height="800" loading="lazy" decoding="async"><figcaption>Pistacho en capas</figcaption></figure>
+  </div>
+  <p class="mesa__hint wrap" aria-hidden="true"><span class="solo-celu">Tirá la foto de arriba para ver la siguiente</span><span class="solo-desk">Agarrá una foto y movela por la mesa</span></p>
+</section>
+
+<!-- ===== 9 · PRODUCCIÓN PARA GASTRONOMÍA ===== -->
+<section class="produccion" aria-labelledby="prod-t">
+  <div class="wrap produccion__in">
+    <div>
+      <p class="eyebrow">Para locales gastronómicos</p>
+      <h2 class="titulo" id="prod-t"><span class="ren"><span>Nosotros producimos, vos vendés</span></span></h2>
+      <p class="produccion__p">¿Tenés o estás por abrir un local? Trabajá nuestros productos: tortas, tartas y salados listos para tu vitrina.</p>
+      <a class="btn btn--pri" target="_blank" rel="noopener" href="https://wa.me/5491162622733?text=Hola%20Panteca!%20Tengo%20un%20local%20y%20quiero%20consultar%20por%20la%20producci%C3%B3n%20para%20gastronom%C3%ADa.">Consultar por WhatsApp</a>
+    </div>
+    <ul class="rubros">
+      <li class="anim"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 31h30V19L5 25z"/><path d="M5 28h30M5 25.5l30-3.5"/><circle cx="27" cy="13" r="3"/><path d="M27 10c0-3 2-4 4-5"/></svg><strong>Dulce</strong><span>Tortas, tartas y budines</span></li>
+      <li class="anim" style="--d:1"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 27c2-8 8-13 15-13s13 5 15 13c-3 1-6 0-8-2-2 2-4 3-7 3s-5-1-7-3c-2 2-5 3-8 2z"/><path d="M14 17l3 9M26 17l-3 9"/></svg><strong>Salado</strong><span>Para el mostrador y la cocina</span></li>
+      <li class="anim" style="--d:2"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 5v30M7 12l26 16M33 12L7 28"/><path d="M16 7l4 3 4-3M16 33l4-3 4 3"/></svg><strong>Congelado</strong><span>Listo para tu stock</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 10 · VISITANOS ===== -->
+<section class="visitanos" id="visitanos" aria-labelledby="vis-t">
+  <div class="wrap visitanos__in">
+    <div class="mapa" aria-hidden="true">
+      <svg viewBox="0 0 520 420" class="mapa__svg">
+        <rect x="0" y="0" width="520" height="420" rx="28" class="mapa__fondo"/>
+        <g class="mapa__manzanas">
+          <rect x="24" y="24" width="190" height="150" rx="14"/><rect x="306" y="24" width="190" height="150" rx="14"/>
+          <rect x="24" y="246" width="190" height="150" rx="14"/><rect x="306" y="246" width="190" height="150" rx="14"/>
+        </g>
+        <path class="mapa__calle" d="M260 0v420M0 210h520"/>
+        <text x="272" y="400" class="mapa__nombre" transform="rotate(-90 272 400)">ARGERICH</text>
+        <g class="mapa__casona" transform="translate(214 120)">
+          <path d="M8 86V40l30-26 30 26v46z"/><path d="M26 86V62h24v24"/><path d="M38 14V2"/><circle cx="38" cy="44" r="7"/>
+        </g>
+        <g class="mapa__pin" transform="translate(296 104)"><circle r="18"/><text y="6" text-anchor="middle">P</text></g>
+      </svg>
+      <span class="mapa__dir">Argerich 2705 · esquina</span>
+    </div>
+    <div class="visitanos__txt">
+      <p class="eyebrow">Visitanos</p>
+      <h2 class="titulo" id="vis-t"><span class="ren"><span>La casona de la esquina</span></span></h2>
+      <p class="estado" data-estado><span class="estado__dot"></span><span data-estado-largo>Martes a domingo desde las 8:30</span></p>
+      <ul class="horarios" data-horarios></ul>
+      <p class="visitanos__nota">El horario del lunes y de los feriados lo avisan en su Instagram.</p>
+      <div class="visitanos__ctas">
+        <a class="btn btn--pri" href="https://www.google.com/maps/place/?q=place_id:ChIJvSrwyLa3vJUR4zRaEKuE-iw" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn btn--sec" href="https://wa.me/5491162622733" target="_blank" rel="noopener">WhatsApp 11-6262-2733</a>
+      </div>
+      <p class="visitanos__py">¿Preferís que te lo lleven? También estamos en PedidosYa.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 11 · FOOTER con el neón ===== -->
+<footer class="pie">
+  <div class="pie__neon" data-neon aria-label="Amor en cada receta"><span>Amor</span> <span>en cada</span> <span>receta</span></div>
+  <div class="wrap pie__cols">
+    <div class="pie__col">
+      <img src="img/logo-crema.svg" alt="Panteca postres y café" width="298" height="117" class="pie__logo" loading="lazy">
+      <p>Argerich 2705, Villa del Parque, CABA</p>
+    </div>
+    <div class="pie__col">
+      <strong>Horario</strong>
+      <p data-pie-horario>Martes a domingo · 8:30 a 23:30</p>
+      <p>Lunes cerrado</p>
+    </div>
+    <div class="pie__col">
+      <strong>Contacto</strong>
+      <p><a href="https://wa.me/5491162622733" target="_blank" rel="noopener">WhatsApp 11-6262-2733</a></p>
+      <p><a href="https://instagram.com/cafepanteca" target="_blank" rel="noopener">@cafepanteca</a></p>
+    </div>
+  </div>
+  <p class="pie__credito">Sitio desarrollado por <a href="https://alejomfernandez.com.ar" target="_blank" rel="noopener">Alejo Martín Fernández</a></p>
+</footer>
+
+<script type="module" src="js/panteca.js?v=2"></script>
+</body>
+</html>

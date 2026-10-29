@@ -1,0 +1,741 @@
+{
+ "$schema": "https://raw.githubusercontent.com/AlejoMFernandez/kit-demos/main/docs/cliente.schema.json",
+ "id": "panteca",
+ "nombre": "Panteca",
+ "instagram": "cafepanteca",
+ "pais": "AR",
+ "idioma": "es",
+ "modo": "demo",
+ "whatsapp": "5491162622733",
+ "prefijoPedido": "PA",
+ "supabase": {
+  "url": "",
+  "anonKey": ""
+ },
+ "marca": {
+  "logo": "img/logo.svg",
+  "logoPanel": "img/logo-crema.svg",
+  "logoClaro": "img/logo-crema.svg",
+  "favicon": "img/favicon.png",
+  "colores": {
+   "fondo": "#FFF4E2",
+   "superficie": "#FFFFFF",
+   "texto": "#42210E",
+   "primario": "#6E4229",
+   "sobrePrimario": "#FFF4E2",
+   "acento": "#A9B86A",
+   "sobreAcento": "#42210E",
+   "borde": "#D9C2A5",
+   "suave": "#7A5A40",
+   "ok": "#5B6B26"
+  },
+  "fuentes": {
+   "titulos": "'Fraunces', Georgia, serif",
+   "texto": "'Poppins', system-ui, sans-serif",
+   "googleFonts": ""
+  },
+  "estilo": {
+   "forma": "pildora",
+   "sombra": "suave",
+   "borde": "1.5px",
+   "mayusculas": false
+  }
+ },
+ "modulos": {
+  "carta": true,
+  "carrito": true,
+  "reservas": true,
+  "admin": true,
+  "cartaQR": true
+ },
+ "horarios": {
+  "lun": [],
+  "mar": [
+   [
+    "08:30",
+    "23:30"
+   ]
+  ],
+  "mie": [
+   [
+    "08:30",
+    "23:30"
+   ]
+  ],
+  "jue": [
+   [
+    "08:30",
+    "23:30"
+   ]
+  ],
+  "vie": [
+   [
+    "08:30",
+    "23:30"
+   ]
+  ],
+  "sab": [
+   [
+    "08:30",
+    "23:30"
+   ]
+  ],
+  "dom": [
+   [
+    "08:30",
+    "23:30"
+   ]
+  ]
+ },
+ "reservas": {
+  "capacidad": 60,
+  "maxPersonas": 12,
+  "anticipacionMin": 60,
+  "diasAdelante": 30,
+  "duracionMin": 90,
+  "cerrados": [],
+  "servicios": [
+   {
+    "id": "almuerzo",
+    "nombre": "Almuerzo",
+    "tandas": [
+     {
+      "nombre": "Mediodía",
+      "turnos": [
+       "12:00",
+       "12:30",
+       "13:00",
+       "13:30",
+       "14:00",
+       "14:30"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "cena",
+    "nombre": "Cena",
+    "tandas": [
+     {
+      "nombre": "Noche",
+      "turnos": [
+       "20:00",
+       "20:30",
+       "21:00",
+       "21:30",
+       "22:00"
+      ]
+     }
+    ]
+   }
+  ],
+  "extras": [
+   {
+    "id": "cumple",
+    "label": "Venimos a festejar un cumple"
+   },
+   {
+    "id": "torta",
+    "label": "Quiero encargar una torta para la mesa"
+   }
+  ]
+ },
+ "pedidos": {
+  "salidas": [
+   "mercadopago",
+   "whatsapp"
+  ],
+  "tipos": [
+   "retiro"
+  ],
+  "envio": 0,
+  "minimo": 0,
+  "sinPrecio": "a_confirmar",
+  "encargo": {
+   "anticipacionHoras": 24,
+   "diasAdelante": 65,
+   "cerrados": [
+    "2026-12-25",
+    "2027-01-01"
+   ],
+   "franjas": [
+    {
+     "id": "manana",
+     "nombre": "Mañana",
+     "desde": "09:00",
+     "hasta": "12:00"
+    },
+    {
+     "id": "tarde",
+     "nombre": "Tarde",
+     "desde": "16:00",
+     "hasta": "20:00"
+    }
+   ]
+  }
+ },
+ "pagos": {
+  "mercadopago": {
+   "endpoint": "https://kit-demos-amf.vercel.app/api/mp-preference",
+   "modo": "sandbox"
+  }
+ },
+ "textos": {
+  "tuPedido": "Tu caja",
+  "verPedido": "Tu caja",
+  "agregar": "Encargar",
+  "carritoVacio": "Tu caja está vacía.",
+  "carritoVacioSub": "Elegí una torta entera, un box o algo de la rotisería y aparece acá.",
+  "enviarPedido": "Confirmar por WhatsApp",
+  "pagar": "Pagar la seña con Mercado Pago",
+  "pedidoPagado": "¡Tu encargo está en el horno!",
+  "pedidoPagadoSub": "Tu código es {codigo}. Te escribimos por WhatsApp para confirmar.",
+  "pedidoListo": "¡Listo, ya nos llegó!",
+  "notaPedido": "Aclaraciones o mensaje para la torta",
+  "noDisponible": "Hoy no hay",
+  "retiro": "Retiro en Argerich 2705",
+  "diaRetiro": "Día de retiro",
+  "franja": "Horario",
+  "encargos": "Encargos",
+  "panel": "Panel de Panteca",
+  "porMPSub": "Pagás la seña ahora y el resto al retirar",
+  "waPedido": "¡Hola Panteca! Quiero hacer este encargo:"
+ },
+ "cartaQR": {
+  "pedir": false,
+  "estilo": "marca",
+  "textos": {
+   "titulo": "Nuestra carta"
+  }
+ },
+ "carta": {
+  "categorias": [
+   {
+    "id": "cafeteria",
+    "nombre": "Cafetería"
+   },
+   {
+    "id": "brunch",
+    "nombre": "Brunchteca y meriendas"
+   },
+   {
+    "id": "tostones",
+    "nombre": "Tostones"
+   },
+   {
+    "id": "mediodia",
+    "nombre": "Mediodía"
+   },
+   {
+    "id": "pastas",
+    "nombre": "Pastas artesanales"
+   },
+   {
+    "id": "porciones",
+    "nombre": "Tortas por porción"
+   },
+   {
+    "id": "tortas-enteras",
+    "nombre": "Tortas enteras",
+    "anticipacionHoras": 48,
+    "sena": 0.5
+   },
+   {
+    "id": "boxes",
+    "nombre": "Box para regalar",
+    "anticipacionHoras": 24,
+    "sena": 0.5
+   },
+   {
+    "id": "rotiseria",
+    "nombre": "Rotisería de fin de año",
+    "especial": true,
+    "desde": "2026-12-22",
+    "hasta": "2026-12-31",
+    "avisoDias": 60,
+    "sena": 0.5,
+    "bajada": "Para tu mesa navideña: se encarga con seña y se retira entre el 22 y el 31 de diciembre."
+   }
+  ],
+  "grupos": [
+   {
+    "nombre": "En el salón",
+    "categorias": [
+     "cafeteria",
+     "brunch",
+     "tostones",
+     "mediodia",
+     "pastas",
+     "porciones"
+    ]
+   },
+   {
+    "nombre": "Para encargar",
+    "categorias": [
+     "tortas-enteras",
+     "boxes",
+     "rotiseria"
+    ]
+   }
+  ],
+  "productos": [
+   {
+    "id": "cafe-con-leche",
+    "categoria": "cafeteria",
+    "nombre": "Café con leche",
+    "descripcion": "",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "cortado",
+    "categoria": "cafeteria",
+    "nombre": "Cortado",
+    "descripcion": "",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "lagrima",
+    "categoria": "cafeteria",
+    "nombre": "Lágrima",
+    "descripcion": "",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "capuccino",
+    "categoria": "cafeteria",
+    "nombre": "Capuccino",
+    "descripcion": "",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "cafe-saborizado",
+    "categoria": "cafeteria",
+    "nombre": "Café saborizado",
+    "descripcion": "",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "exprimido",
+    "categoria": "cafeteria",
+    "nombre": "Exprimido grande",
+    "descripcion": "",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "brunchteca",
+    "categoria": "brunch",
+    "nombre": "Brunchteca",
+    "descripcion": "Para dos: 2 infusiones, 2 exprimidos grandes, 1 torta a elección, 1 tostón a elección, 1 tostado de pan árabe y 1 budín.",
+    "precio": null,
+    "foto": "",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "panteca-para-2",
+    "categoria": "brunch",
+    "nombre": "Panteca para 2",
+    "descripcion": "La merienda para compartir de la casa.",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "focaccia",
+    "categoria": "brunch",
+    "nombre": "Focaccia rellena",
+    "descripcion": "",
+    "precio": null,
+    "foto": "img/f/focaccia.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "toston-palta",
+    "categoria": "tostones",
+    "nombre": "Tostón de palta, huevo y queso crema",
+    "descripcion": "En pan de campo. Comen dos tranquilos.",
+    "precio": null,
+    "foto": "",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "toston-bosque",
+    "categoria": "tostones",
+    "nombre": "Tostón del bosque",
+    "descripcion": "Hongos en conserva caseros, rúcula, parmesano y queso crema.",
+    "precio": null,
+    "foto": "img/f/toston-bosque.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "toston-panteca",
+    "categoria": "tostones",
+    "nombre": "El Tostón Panteca",
+    "descripcion": "Tamaño XL, para compartir.",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "menu-ejecutivo",
+    "categoria": "mediodia",
+    "nombre": "Menú ejecutivo",
+    "descripcion": "Al mediodía, con platos que cambian.",
+    "precio": null,
+    "foto": "",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "mac-cheese",
+    "categoria": "mediodia",
+    "nombre": "Mac & cheese",
+    "descripcion": "",
+    "precio": null,
+    "foto": "img/f/mac-cheese.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "pizza-napolitana",
+    "categoria": "mediodia",
+    "nombre": "Pizza estilo napolitano",
+    "descripcion": "",
+    "precio": null,
+    "foto": "img/f/pizza.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "sorrentinos",
+    "categoria": "pastas",
+    "nombre": "Sorrentinos",
+    "descripcion": "Pasta hecha en casa.",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "spaghetti",
+    "categoria": "pastas",
+    "nombre": "Spaghetti",
+    "descripcion": "Pasta hecha en casa.",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "fideos",
+    "categoria": "pastas",
+    "nombre": "Fideos caseros",
+    "descripcion": "Pasta hecha en casa.",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "porcion-del-dia",
+    "categoria": "porciones",
+    "nombre": "Porción de torta del día",
+    "descripcion": "Todos los días, hasta agotar stock. Solo en el salón.",
+    "precio": 8000,
+    "foto": "img/f/porcion-chocolate.webp",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "budin-carrot",
+    "categoria": "porciones",
+    "nombre": "Budín carrot",
+    "descripcion": "",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "t-dubai",
+    "categoria": "tortas-enteras",
+    "nombre": "Chocolate Dubái",
+    "descripcion": "Chocolate con pistacho y un crocante que simula el kataifi.",
+    "precio": null,
+    "foto": "img/f/dubai.webp",
+    "etiquetas": [
+     "vitrina",
+     "nuevo"
+    ]
+   },
+   {
+    "id": "t-tiramisu-pistacho",
+    "categoria": "tortas-enteras",
+    "nombre": "Tiramisú de pistacho",
+    "descripcion": "",
+    "precio": null,
+    "foto": "img/f/tiramisu-pistacho.webp",
+    "etiquetas": [
+     "vitrina"
+    ]
+   },
+   {
+    "id": "t-pistacho",
+    "categoria": "tortas-enteras",
+    "nombre": "Torta de pistacho",
+    "descripcion": "Para los pistaccio lovers.",
+    "precio": null,
+    "foto": "img/f/pistacho-merengue.webp",
+    "etiquetas": [
+     "vitrina"
+    ]
+   },
+   {
+    "id": "t-brownie-merengue",
+    "categoria": "tortas-enteras",
+    "nombre": "Brownie con merengue",
+    "descripcion": "Con dulce de leche, mousse de frutos rojos o de Ferrero Rocher.",
+    "precio": null,
+    "foto": "img/f/brownies-merengue.webp",
+    "etiquetas": [
+     "vitrina"
+    ]
+   },
+   {
+    "id": "t-cookies-cream",
+    "categoria": "tortas-enteras",
+    "nombre": "Cookies & cream",
+    "descripcion": "La mejor del mundo, según el equipo.",
+    "precio": null,
+    "foto": "img/f/cookies-cream.webp",
+    "etiquetas": [
+     "vitrina"
+    ]
+   },
+   {
+    "id": "t-red-pie",
+    "categoria": "tortas-enteras",
+    "nombre": "Red pie",
+    "descripcion": "Como el lemon pie, pero de frutos rojos.",
+    "precio": null,
+    "foto": "img/f/red-pie.webp",
+    "etiquetas": [
+     "vitrina"
+    ]
+   },
+   {
+    "id": "t-carrot",
+    "categoria": "tortas-enteras",
+    "nombre": "Carrot cake",
+    "descripcion": "",
+    "precio": null,
+    "foto": "img/f/carrot.webp",
+    "etiquetas": [
+     "vitrina"
+    ]
+   },
+   {
+    "id": "t-rogel",
+    "categoria": "tortas-enteras",
+    "nombre": "Rogel",
+    "descripcion": "Clásico o de chocolate.",
+    "precio": null,
+    "foto": "img/f/rogel.webp",
+    "etiquetas": [
+     "vitrina"
+    ]
+   },
+   {
+    "id": "t-lemon-brownie",
+    "categoria": "tortas-enteras",
+    "nombre": "Lemon brownie",
+    "descripcion": "",
+    "precio": null,
+    "foto": "img/f/lemon-brownie.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "t-torta-brownie",
+    "categoria": "tortas-enteras",
+    "nombre": "Torta brownie",
+    "descripcion": "",
+    "precio": null,
+    "foto": "img/f/torta-brownie.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "t-mar-del-plata",
+    "categoria": "tortas-enteras",
+    "nombre": "Torta Mar del Plata",
+    "descripcion": "Con sal marina, en homenaje al alfajor.",
+    "precio": null,
+    "foto": "img/f/mar-del-plata.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "t-vasca",
+    "categoria": "tortas-enteras",
+    "nombre": "Torta vasca",
+    "descripcion": "",
+    "precio": null,
+    "foto": "img/f/torta-vasca.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "box-panteca",
+    "categoria": "boxes",
+    "nombre": "Box Panteca",
+    "descripcion": "2 cookies con chocolate, alfajores con dulce de leche y baño de chocolate y 2 muffins.",
+    "precio": null,
+    "foto": "img/f/box.webp",
+    "etiquetas": []
+   },
+   {
+    "id": "r-lechon",
+    "categoria": "rotiseria",
+    "nombre": "Lechón trozado",
+    "descripcion": "",
+    "precio": 45000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-pavita",
+    "categoria": "rotiseria",
+    "nombre": "Blanco de pavita",
+    "descripcion": "",
+    "precio": 56000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-lengua",
+    "categoria": "rotiseria",
+    "nombre": "Lengua",
+    "descripcion": "",
+    "precio": 44000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-bondiola",
+    "categoria": "rotiseria",
+    "nombre": "Bondiola rellena",
+    "descripcion": "",
+    "precio": 54000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-pollo-papas",
+    "categoria": "rotiseria",
+    "nombre": "Pollo entero con papas",
+    "descripcion": "",
+    "precio": 39000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-pollo-relleno",
+    "categoria": "rotiseria",
+    "nombre": "Pollo relleno (kg)",
+    "descripcion": "",
+    "precio": 44000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-matambre",
+    "categoria": "rotiseria",
+    "nombre": "Matambre de pollo o carne",
+    "descripcion": "",
+    "precio": 48000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-pechuga",
+    "categoria": "rotiseria",
+    "nombre": "Pechuga rellena",
+    "descripcion": "",
+    "precio": 44000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-peceto",
+    "categoria": "rotiseria",
+    "nombre": "Peceto mechado",
+    "descripcion": "",
+    "precio": 62000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-vitel",
+    "categoria": "rotiseria",
+    "nombre": "Vitel toné",
+    "descripcion": "",
+    "precio": 54000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-carne-horno",
+    "categoria": "rotiseria",
+    "nombre": "Carne al horno",
+    "descripcion": "",
+    "precio": 56000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-arrollado",
+    "categoria": "rotiseria",
+    "nombre": "Arrollado agridulce (c/u)",
+    "descripcion": "$16.000 / $19.000 la temporada pasada",
+    "precio": null,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-rusa",
+    "categoria": "rotiseria",
+    "nombre": "Ensalada rusa",
+    "descripcion": "",
+    "precio": 22000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-waldorf",
+    "categoria": "rotiseria",
+    "nombre": "Ensalada Waldorf",
+    "descripcion": "",
+    "precio": 36000,
+    "foto": "",
+    "etiquetas": []
+   },
+   {
+    "id": "r-caprese",
+    "categoria": "rotiseria",
+    "nombre": "Ensalada caprese",
+    "descripcion": "",
+    "precio": 36000,
+    "foto": "",
+    "etiquetas": []
+   }
+  ]
+ }
+}
