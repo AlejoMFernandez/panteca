@@ -433,7 +433,12 @@ html.menu-abierto { overflow: hidden; }
 .fiestas .kit-tabs { display: none; }
 .fiestas .kit-carta__panel { background: var(--crema); color: var(--choco); border-radius: 26px; padding: 10px 22px 14px; }
 .fiestas .plato:last-child { border-bottom: 0 !important; }
-.fiestas .kit-item__side { flex-direction: row; align-items: center; gap: 12px; }
+.fiestas .plato { grid-template-columns: minmax(0, 1fr) auto !important; }
+.fiestas .plato .kit-item__body { min-width: 0; }
+.fiestas .plato__n { font-size: 17px; line-height: 1.3; }
+.fiestas .kit-item__side { flex-direction: row; align-items: center; gap: 14px; flex-shrink: 0; }
+.fiestas .kit-price { min-width: 76px; text-align: right; }
+@media (max-width: 420px) { .fiestas .kit-item__side { flex-direction: column; align-items: flex-end; gap: 6px; } .fiestas .kit-price { min-width: 0; } }
 .fiestas .plato { padding: 10px 0 !important; }
 .fiestas .plato__d { font-size: 13px; }
 .fiestas .plato.oculta { display: none; }
@@ -445,7 +450,7 @@ html.menu-abierto { overflow: hidden; }
   .fiestas .kit-carta__panel { padding: 14px 32px 18px; }
 }
 @media (min-width: 1200px) {
-  .fiestas .kit-carta__panel { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+  .fiestas .kit-carta__panel { padding: 14px 36px 18px; }
 }
 
 /* ============ RESERVAS ============ */
@@ -456,15 +461,20 @@ html.menu-abierto { overflow: hidden; }
 .reservas__foto::after { content: ""; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(to top, var(--casona), transparent); }
 .reservas__txt { padding: 8px var(--pad) var(--aire); display: flex; flex-direction: column; gap: 16px; position: relative; margin-top: -60px; }
 .reservas__p { color: var(--crema2); max-width: 44ch; }
-.reservas__form { display: none; }
-.reservas__btn { margin-top: 10px; width: 100%; }
+.servicios { display: grid; gap: 12px; margin-top: 8px; }
+.servicio { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "h btn" "t btn" "p btn"; column-gap: 16px; row-gap: 2px; align-items: center; padding: 20px 22px; border-radius: 22px; background: rgba(255,244,226,.07); border: 1px solid rgba(255,244,226,.16); }
+.servicio__h { grid-area: h; font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #E9C9A0; }
+.servicio__t { grid-area: t; font-size: 28px; color: var(--crema); }
+.servicio__p { grid-area: p; font-size: 15px; color: var(--crema2); }
+.servicio .btn { grid-area: btn; }
+.reservas__nota { font-size: 14px; color: #CDB89F; }
+@media (max-width: 520px) { .servicio { grid-template-columns: minmax(0, 1fr); grid-template-areas: "h" "t" "p" "btn"; } .servicio .btn { width: 100%; margin-top: 12px; } }
 @media (min-width: 1024px) {
-  .reservas__in { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); min-height: 860px; }
+  .reservas__in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 720px; }
   .reservas__foto { height: auto; max-height: none; }
   .reservas__foto::after { inset: 0 0 0 auto; width: 30%; height: auto; background: linear-gradient(to left, var(--casona), transparent); }
   .reservas__txt { margin: 0; padding: 96px max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad))) 96px 64px; justify-content: center; }
-  .reservas__form { display: block; margin-top: 12px; background: var(--crema); color: var(--choco); border-radius: 26px; padding: 26px 28px; max-width: 620px; }
-  .reservas__btn { display: none; }
+  .servicios { max-width: 600px; }
 }
 
 /* ============ USTEDES (galería) ============ */
@@ -505,19 +515,13 @@ html.menu-abierto { overflow: hidden; }
 /* ============ VISITANOS ============ */
 .visitanos { padding: var(--aire) 0; background: var(--merengue); }
 .visitanos__in { display: grid; gap: 40px; }
-.mapa { position: relative; }
-.mapa__svg { width: 100%; height: auto; }
-.mapa__fondo { fill: #EDD6BC; }
-.mapa__manzanas rect { fill: #F6E7D2; }
-.mapa__calle { stroke: var(--crema); stroke-width: 40; fill: none; }
-.mapa__nombre { fill: var(--suave); font: 600 14px var(--f-txt); letter-spacing: .2em; }
-.mapa__casona path, .mapa__casona circle { fill: none; stroke: var(--choco); stroke-width: 3; stroke-linejoin: round; }
-.mapa__pin circle { fill: var(--choco); }
-.mapa__pin text { fill: var(--crema); font: 600 18px var(--f-tit); }
-.js .mapa__pin { transform-box: fill-box; }
-.mapa.visto .mapa__pin { animation: pin 2.4s var(--ease) infinite; }
-@keyframes pin { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
-.mapa__dir { display: inline-block; margin-top: 14px; background: var(--choco); color: var(--crema); font-size: 14px; font-weight: 500; border-radius: 999px; padding: 8px 16px; }
+.mapa { display: flex; flex-direction: column; gap: 12px; }
+.mapa__marco { position: relative; border-radius: 26px; overflow: hidden; background: #E9D5BC; aspect-ratio: 4 / 3.4; box-shadow: 0 20px 50px -30px rgba(66,33,14,.5); }
+.mapa__marco::before { content: "Cargando el mapa…"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--suave); font-size: 15px; }
+.mapa__iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: saturate(.75) sepia(.12); }
+.mapa__dir { align-self: flex-start; display: flex; flex-direction: column; gap: 2px; background: var(--choco); color: var(--crema); border-radius: 18px; padding: 12px 18px; text-decoration: none; box-shadow: 0 10px 24px -10px rgba(0,0,0,.5); }
+.mapa__dir strong { font: 600 18px/1.2 var(--f-tit); }
+.mapa__dir span { font-size: 13px; color: var(--crema2); }
 .visitanos__txt { display: flex; flex-direction: column; gap: 18px; }
 .estado { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; }
 .estado__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--suave); }
@@ -531,8 +535,8 @@ html.menu-abierto { overflow: hidden; }
 .visitanos__ctas { display: flex; flex-direction: column; gap: 10px; }
 .visitanos__ctas .btn { width: 100%; }
 @media (min-width: 1024px) {
-  .mapa__dir { position: absolute; left: 18px; bottom: 18px; margin: 0; }
-  .visitanos__in { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 80px; align-items: center; }
+  .mapa__marco { aspect-ratio: auto; flex: 1; min-height: 480px; }
+  .visitanos__in { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 80px; align-items: stretch; }
   .visitanos__ctas { flex-direction: row; } .visitanos__ctas .btn { width: auto; }
 }
 
