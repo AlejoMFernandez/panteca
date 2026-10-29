@@ -321,7 +321,9 @@ html.menu-abierto { overflow: hidden; }
 .carta .kit-step { background: var(--choco); border-color: var(--choco); }
 .carta .kit-step button { width: 44px; height: 44px; }
 .carta-nav { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 12px; padding: 22px 0 8px; }
-.carta-nav button { min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--choco); background: transparent; color: var(--choco); font: 600 15px/1 var(--f-txt); cursor: pointer; max-width: 48%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.carta-nav button { min-height: 56px; padding: 8px 18px; border-radius: 18px; border: 1.5px solid var(--choco); background: transparent; color: var(--choco); font: 600 15px/1.2 var(--f-txt); cursor: pointer; max-width: 48%; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; text-align: left; }
+.carta-nav button small { font: 500 12px/1 var(--f-txt); color: var(--suave); }
+.carta-nav .carta-nav__sig { align-items: flex-end; text-align: right; margin-left: auto; }
 .carta-nav button:disabled { visibility: hidden; }
 @media (hover: hover) { .carta-nav button:hover, .carta .kit-tab:hover:not(.is-on) { background: var(--merengue); } }
 @media (min-width: 1024px) {
@@ -572,3 +574,56 @@ html.menu-abierto .kit-demo-pill, html.kit-lock .kit-demo-pill, html.en-hero .ki
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* ===== ajustes mobile (auditoría) ===== */
+.menu__panel, .pie__panel { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; min-height: 48px; padding: 0 18px; border-radius: 999px; background: #fff; color: var(--choco); border: 1px solid var(--linea); font-weight: 600; font-size: 15px; text-decoration: none; margin: 18px 0; }
+.pie__panel { margin: 40px auto 0; background: rgba(255,244,226,.08); color: var(--crema); border-color: rgba(255,244,226,.2); }
+.menu__dot { width: 9px; height: 9px; border-radius: 50%; background: #5B8A2A; box-shadow: 0 0 0 0 rgba(91,138,42,.5); animation: ping 2s infinite; flex-shrink: 0; }
+@media (max-width: 767px) {
+  .kit-demo-pill { display: none !important; }
+  .vitrina { padding-bottom: 56px; }
+  .estante__pie { margin-top: 18px; }
+  .fiestas .plato { grid-template-columns: minmax(0, 1fr) auto !important; grid-template-areas: "n add" "p add"; row-gap: 4px !important; align-items: center; }
+  .fiestas .plato .kit-item__body { grid-area: n; }
+  .fiestas .kit-item__side { display: contents; }
+  .fiestas .kit-price { grid-area: p; text-align: left; min-width: 0; font-size: 15px; }
+  .fiestas .kit-qty { grid-area: add; }
+  .fiestas .kit-price--na { font-size: 13px; }
+}
+@media (min-width: 768px) and (min-height: 521px), (min-width: 768px) and (hover: hover) { .pie__panel { display: none; } }
+@media (hover: none) and (max-height: 520px) { .kit-demo-pill { display: none !important; } }
+@media (max-width: 767px) {
+  /* reserva como hoja desde abajo */
+  .kit-pop--resv { place-items: end stretch; padding: 0; }
+  .kit-pop--resv .kit-pop__box { width: 100%; max-height: 92dvh; border-radius: 24px 24px 0 0; border-bottom: 0; transform: translateY(100%); padding-bottom: env(safe-area-inset-bottom); }
+  .kit-pop--resv.is-open .kit-pop__box { transform: none; }
+  .kit-pop--resv.is-closing .kit-pop__box { transform: translateY(100%); }
+  /* carta: foto | texto, y precio + botón en una fila debajo */
+  .carta .plato { grid-template-columns: 60px minmax(0, 1fr) !important; grid-template-areas: "foto body" "foto side"; column-gap: 14px !important; row-gap: 8px !important; align-items: start !important; }
+  .carta .plato:not(:has(.kit-item__foto)) { grid-template-columns: minmax(0, 1fr) auto !important; grid-template-areas: "body side"; align-items: center !important; }
+  .carta .plato:not(:has(.kit-item__foto)) .kit-item__side { flex-direction: column; align-items: flex-end; justify-content: center; }
+  .carta .plato .kit-item__foto { grid-area: foto; }
+  .carta .plato .kit-item__body { grid-area: body; }
+  .carta .plato .kit-item__side { grid-area: side; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; }
+  .carta .plato:not(:has(.kit-qty)) .kit-item__side { justify-content: flex-start; }
+  .plato__n .punto { display: none; }
+  .pie__panel { margin: 36px auto 0; font-size: 14px; white-space: nowrap; }
+}
+@media (max-width: 1023px) {
+  /* el tamaño justo debajo de la torta, así se ve crecer */
+  .metro__form { display: contents; }
+  .metro__torta { order: 0; }
+  .metro__form > .campo:nth-child(2) { order: 1; margin-top: -8px; }
+  .metro__form > .campo:nth-child(1) { order: 2; }
+  .metro__form > .campo:nth-child(3) { order: 3; }
+  .metro__form > .campo:nth-child(4) { order: 4; }
+  .metro__total { order: 5; }
+}
+@media (max-width: 767px) {
+  .metro { gap: 24px; }
+  .metro__escena { height: 250px; }
+  .metro__regla { height: 250px; }
+  .pisos { --alto: 46px; }
+  .metro__mini { width: 64px; height: 64px; }
+}
+@media (max-width: 420px) { .resena { white-space: normal; gap: 10px; padding: 10px 16px; font-size: 14px; } .resena strong { font-size: 22px; } }

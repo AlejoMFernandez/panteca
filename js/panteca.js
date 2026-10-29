@@ -254,7 +254,7 @@ function cartaEventos() {
       pn.insertAdjacentHTML('afterbegin', `<div class="sec-cab"><div class="sec-cab__fila"><h3 class="sec-cab__t">${esc(cat.nombre)}</h3><span class="sec-cab__n">${n} ${n === 1 ? 'opción' : 'opciones'}</span></div>${NOTAS[cat.id] ? `<p class="sec-cab__nota">${esc(NOTAS[cat.id])}</p>` : ''}</div>`);
       const ant = paneles[i - 1], sig = paneles[i + 1];
       const nombre = (p) => p ? (categorias.find(c => p.id.endsWith('-p-' + c.id))?.nombre || '') : '';
-      pn.insertAdjacentHTML('beforeend', `<div class="carta-nav"><button type="button" data-ir="${ant ? ant.id : ''}" ${ant ? '' : 'disabled'}>← ${esc(nombre(ant))}</button><button type="button" data-ir="${sig ? sig.id : ''}" ${sig ? '' : 'disabled'}>${esc(nombre(sig))} →</button></div>`);
+      pn.insertAdjacentHTML('beforeend', `<div class="carta-nav"><button type="button" class="carta-nav__ant" data-ir="${ant ? ant.id : ''}" ${ant ? '' : 'disabled'}><small>← Anterior</small>${esc(nombre(ant))}</button><button type="button" class="carta-nav__sig" data-ir="${sig ? sig.id : ''}" ${sig ? '' : 'disabled'}><small>Siguiente →</small>${esc(nombre(sig))}</button></div>`);
     });
     $$('[data-ir]', el).forEach(b => b.addEventListener('click', () => {
       const tab = $(`.kit-tab[aria-controls="${b.dataset.ir}"]`, el); if (!tab) return;
